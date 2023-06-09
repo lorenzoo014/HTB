@@ -105,8 +105,9 @@ def main(s):
 
 
 if __name__ == '__main__':
+    HOST, PORT = "localhost", 1234
     socketserver.TCPServer.allow_reuse_address = True
-    server = ReusableTCPServer( Handler)
+    server = ReusableTCPServer((HOST,PORT),Handler)
     server.serve_forever()
 
 
